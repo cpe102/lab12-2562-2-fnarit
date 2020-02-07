@@ -18,3 +18,18 @@ int main()
 }
 
 //Write definition of stat() here 
+void stat(const double data1[],int i,double data2[]){
+    double max = data1[0],min = data1[0],sum = 0,avg,sd;
+    for(int n = 0;n < i; n++){
+        sum += data1[n];
+    }
+    data2[0] = sum/i;
+    data2[1] = pow(sum,2)/i - pow(data2[0],2);
+    for(int j = 1;j < i; j++){
+        if(data1[j] > max) max = data1[j];
+        data2[2] = max;
+        if(data1[j] < min) min = data1[j];
+        data2[3] = min;
+    }
+}
+    
